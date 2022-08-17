@@ -10,7 +10,7 @@
 - [x] Clicks
 - [x] Bots
 - [x] Logs
-- [ ] Reports
+- [x] Reports
 - [ ] Offers
 - [ ] Stats Clean
 - [ ] Streams

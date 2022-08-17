@@ -11,4 +11,5 @@ public interface IKeitaroClient
     public IClicksClient Clicks { get; }
     public IGroupClient Groups { get; }
     public ILogsClient Logs { get; }
+    public IReportsClient Reports { get; }
 }

@@ -31,6 +31,7 @@ public class KeitaroClient : IKeitaroClient
         Clicks = new ClicksClient(_connection);
         Groups = new GroupClient(_connection);
         Logs = new LogsClient(_connection);
+        Reports = new ReportsClient(_connection);
     }
 
     public IDomainsClient Domains { get; }
@@ -40,4 +41,5 @@ public class KeitaroClient : IKeitaroClient
     public IClicksClient Clicks { get; }
     public IGroupClient Groups { get; }
     public ILogsClient Logs { get; }
+    public IReportsClient Reports { get; }
 }
