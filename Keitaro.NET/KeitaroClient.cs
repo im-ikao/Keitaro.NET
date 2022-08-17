@@ -27,9 +27,17 @@ public class KeitaroClient : IKeitaroClient
         Domains = new DomainsClient(_connection);
         Campaigns = new CampaignsClient(_connection);
         AffiliateNetworks = new AffiliateNetworksClient(_connection);
+        Bots = new BotsClient(_connection);
+        Clicks = new ClicksClient(_connection);
+        Groups = new GroupClient(_connection);
+        Logs = new LogsClient(_connection);
     }
 
     public IDomainsClient Domains { get; }
     public ICampaignsClient Campaigns { get; }
     public IAffiliateNetworksClient AffiliateNetworks { get; }
+    public IBotsClient Bots { get; }
+    public IClicksClient Clicks { get; }
+    public IGroupClient Groups { get; }
+    public ILogsClient Logs { get; }
 }
