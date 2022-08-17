@@ -16,7 +16,7 @@ public class DomainsClient : IDomainsClient
     
     public Task<IReadOnlyList<Domain>> GetAll()
     {
-        return _connection.ExecuteRequest<List<Domain>>("domains", null, "domains").ToReadOnlyListAsync();
+        return _connection.ExecuteRequest<List<Domain>>("domains", null, null).ToReadOnlyListAsync();
     }
 
     public Task<Domain> Create(Models.Requests.Domain domain)
@@ -33,9 +33,13 @@ public class DomainsClient : IDomainsClient
         return _connection.ExecuteRequest<Domain>("domains/{name}", parameters, null);
     }
 
-    public Task<Domain> Update(Models.Requests.Domain domain)
+    public Task<Domain> Update(int domainId, Models.Requests.Domain domain)
     {
-        return _connection.ExecuteRequest<Domain>("domains", null, domain, method: Method.Put);
+        var parameters = new List<Parameter> {
+            new UrlSegmentParameter("name",domainId.ToString())
+        };
+        
+        return _connection.ExecuteRequest<Domain>("domains/{name}", parameters, domain, method: Method.Put);
     }
 
     public Task<Domain> Archive(int domainId)
@@ -67,6 +71,6 @@ public class DomainsClient : IDomainsClient
 
     public Task<IReadOnlyList<Domain>> GetAllDeleted()
     {
-        return _connection.ExecuteRequest<List<Domain>>("domains/deleted", null, "domains").ToReadOnlyListAsync();
+        return _connection.ExecuteRequest<List<Domain>>("domains/deleted", null, null).ToReadOnlyListAsync();
     }
 }

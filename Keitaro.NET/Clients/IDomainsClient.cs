@@ -22,7 +22,7 @@ public interface IDomainsClient
     /// <summary>
     /// Update a domain
     /// </summary>
-    Task<Domain> Update(Models.Requests.Domain domain);
+    Task<Domain> Update(int domainId, Models.Requests.Domain domain);
     
     /// <summary>
     /// Archive a domain
