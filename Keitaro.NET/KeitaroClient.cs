@@ -26,7 +26,9 @@ public class KeitaroClient : IKeitaroClient
         _connection = new Connection(client);
         
         Domains = new DomainsClient(_connection);
+        Campaigns = new CampaignsClient(_connection);
     }
 
     public IDomainsClient Domains { get; }
+    public ICampaignsClient Campaigns { get; }
 }
