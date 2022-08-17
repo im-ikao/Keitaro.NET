@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace Keitaro.NET.Models.Requests;
 
-public class Costs
+public class CampaignCosts
 {
     [JsonProperty("start_date")]
     public string StartDate { get; set; }

@@ -4,7 +4,6 @@ using Keitaro.NET.Http;
 using Keitaro.NET.Models.Requests;
 using RestSharp;
 using Campaign = Keitaro.NET.Models.Responses.Campaign;
-using Domain = Keitaro.NET.Models.Responses.Domain;
 
 namespace Keitaro.NET.Clients;
 
@@ -81,13 +80,13 @@ public class CampaignsClient : ICampaignsClient
         return _connection.ExecuteRequest<Campaign>("campaigns/{id}/disable", parameters, null, method: Method.Post);
     }
 
-    public async void UpdateCosts(int id, Costs costs)
+    public async void UpdateCosts(int id, CampaignCosts campaignCosts)
     {
         var parameters = new List<Parameter> {
             new UrlSegmentParameter("id", id.ToString())
         };
         
-        await _connection.ExecuteRaw("campaigns/{id}/update_costs", parameters, costs, method: Method.Post);
+        await _connection.ExecuteRaw("campaigns/{id}/update_costs", parameters, campaignCosts, method: Method.Post);
     }
 
     public Task<Campaign> Restore(int id)

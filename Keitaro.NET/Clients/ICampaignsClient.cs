@@ -48,7 +48,7 @@ public interface ICampaignsClient
     /// <summary>
     /// Update campaign costs
     /// </summary>
-    void UpdateCosts(int id, Models.Requests.Costs costs);
+    void UpdateCosts(int id, Models.Requests.CampaignCosts campaignCosts);
 
     /// <summary>
     /// Archive a campaign
