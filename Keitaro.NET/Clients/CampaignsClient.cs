@@ -39,10 +39,10 @@ public class CampaignsClient : ICampaignsClient
     public Task<Campaign> Get(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("name",id.ToString())
+            new UrlSegmentParameter("id",id.ToString())
         };
         
-        return _connection.ExecuteRequest<Campaign>("campaign/{name}", parameters, null);
+        return _connection.ExecuteRequest<Campaign>("campaign/{id}", parameters, null);
     }
 
     public Task<Campaign> Update(int id, Models.Requests.Campaign campaign)
@@ -66,7 +66,7 @@ public class CampaignsClient : ICampaignsClient
     public Task<Campaign> Enable(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("id",id.ToString())
+            new UrlSegmentParameter("id", id.ToString())
         };
         
         return _connection.ExecuteRequest<Campaign>("campaigns/{id}/enable", parameters, null, method: Method.Post);
@@ -75,7 +75,7 @@ public class CampaignsClient : ICampaignsClient
     public Task<Campaign> Disable(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("id",id.ToString())
+            new UrlSegmentParameter("id", id.ToString())
         };
         
         return _connection.ExecuteRequest<Campaign>("campaigns/{id}/disable", parameters, null, method: Method.Post);
@@ -84,7 +84,7 @@ public class CampaignsClient : ICampaignsClient
     public async void UpdateCosts(int id, Costs costs)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("id",id.ToString())
+            new UrlSegmentParameter("id", id.ToString())
         };
         
         await _connection.ExecuteRaw("campaigns/{id}/update_costs", parameters, costs, method: Method.Post);
@@ -93,7 +93,7 @@ public class CampaignsClient : ICampaignsClient
     public Task<Campaign> Restore(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("id",id.ToString())
+            new UrlSegmentParameter("id", id.ToString())
         };
         
         return _connection.ExecuteRequest<Campaign>("campaigns/{id}/restore", parameters, null, method: Method.Post);

@@ -27,7 +27,7 @@ public class DomainsClient : IDomainsClient
     public Task<Domain> Get(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("id",id.ToString())
+            new UrlSegmentParameter("id", id.ToString())
         };
         
         return _connection.ExecuteRequest<Domain>("domains/{id}", parameters, null);
@@ -36,7 +36,7 @@ public class DomainsClient : IDomainsClient
     public Task<Domain> Update(int id, Models.Requests.Domain domain)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("id",id.ToString())
+            new UrlSegmentParameter("id", id.ToString())
         };
         
         return _connection.ExecuteRequest<Domain>("domains/{id}", parameters, domain, method: Method.Put);
@@ -45,7 +45,7 @@ public class DomainsClient : IDomainsClient
     public Task<Domain> Archive(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("id",id.ToString())
+            new UrlSegmentParameter("id", id.ToString())
         };
         
         return _connection.ExecuteRequest<Domain>("domains/{id}", parameters, null, method: Method.Delete);
@@ -54,7 +54,7 @@ public class DomainsClient : IDomainsClient
     public Task<Domain> UpdateStatus(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("id",id.ToString())
+            new UrlSegmentParameter("id", id.ToString())
         };
         
         return _connection.ExecuteRequest<Domain>("domains/{id}/check", parameters, null, method: Method.Post);
@@ -63,7 +63,7 @@ public class DomainsClient : IDomainsClient
     public Task<Domain> Restore(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("id",id.ToString())
+            new UrlSegmentParameter("id", id.ToString())
         };
         
         return _connection.ExecuteRequest<Domain>("domains/{id}/restore", parameters, null, method: Method.Post);

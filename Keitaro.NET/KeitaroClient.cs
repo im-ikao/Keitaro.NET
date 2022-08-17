@@ -7,7 +7,6 @@ namespace Keitaro.NET;
 public class KeitaroClient : IKeitaroClient
 {
     public readonly string KeitaroApiUrl;
-
     private readonly IConnection _connection;
     
     public KeitaroClient(string token, string keitaroApiUrl)
@@ -27,8 +26,10 @@ public class KeitaroClient : IKeitaroClient
         
         Domains = new DomainsClient(_connection);
         Campaigns = new CampaignsClient(_connection);
+        AffiliateNetworks = new AffiliateNetworksClient(_connection);
     }
 
     public IDomainsClient Domains { get; }
     public ICampaignsClient Campaigns { get; }
+    public IAffiliateNetworksClient AffiliateNetworks { get; }
 }

@@ -18,42 +18,42 @@ public interface ICampaignsClient
     /// <summary>
     /// Clone a new campaign
     /// </summary>
-    Task<Campaign> Clone(int campaignId, Models.Requests.Campaign campaign);
+    Task<Campaign> Clone(int id, Models.Requests.Campaign campaign);
     
     /// <summary>
     /// Retrieve a specific campaign
     /// </summary>
-    Task<Campaign> Get(int campaignId);
+    Task<Campaign> Get(int id);
     
     /// <summary>
     /// Update a campaign
     /// </summary>
-    Task<Campaign> Update(int campaignId, Models.Requests.Campaign campaign);
+    Task<Campaign> Update(int id, Models.Requests.Campaign campaign);
     
     /// <summary>
     /// Archive a campaign
     /// </summary>
-    Task<Campaign> Archive(int campaignId);
+    Task<Campaign> Archive(int id);
     
     /// <summary>
     /// Enable a campaign
     /// </summary>
-    Task<Campaign> Enable(int campaignId);
+    Task<Campaign> Enable(int id);
     
     /// <summary>
     /// Disable a campaign
     /// </summary>
-    Task<Campaign> Disable(int campaignId);
+    Task<Campaign> Disable(int id);
 
     /// <summary>
     /// Update campaign costs
     /// </summary>
-    void UpdateCosts(int campaignId, Models.Requests.Costs costs);
+    void UpdateCosts(int id, Models.Requests.Costs costs);
 
     /// <summary>
     /// Archive a campaign
     /// </summary>
-    Task<Campaign> Restore(int campaignId);
+    Task<Campaign> Restore(int id);
 
     /// <summary>
     /// Retrieve a list of all campaigns in your account
