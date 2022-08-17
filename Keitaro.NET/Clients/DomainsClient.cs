@@ -24,49 +24,49 @@ public class DomainsClient : IDomainsClient
         return _connection.ExecuteRequest<Domain>("domains", null, domain, method: Method.Post);
     }
 
-    public Task<Domain> Get(int domainId)
+    public Task<Domain> Get(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("name",domainId.ToString())
+            new UrlSegmentParameter("id",id.ToString())
         };
         
-        return _connection.ExecuteRequest<Domain>("domains/{name}", parameters, null);
+        return _connection.ExecuteRequest<Domain>("domains/{id}", parameters, null);
     }
 
-    public Task<Domain> Update(int domainId, Models.Requests.Domain domain)
+    public Task<Domain> Update(int id, Models.Requests.Domain domain)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("name",domainId.ToString())
+            new UrlSegmentParameter("id",id.ToString())
         };
         
-        return _connection.ExecuteRequest<Domain>("domains/{name}", parameters, domain, method: Method.Put);
+        return _connection.ExecuteRequest<Domain>("domains/{id}", parameters, domain, method: Method.Put);
     }
 
-    public Task<Domain> Archive(int domainId)
+    public Task<Domain> Archive(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("name",domainId.ToString())
+            new UrlSegmentParameter("id",id.ToString())
         };
         
-        return _connection.ExecuteRequest<Domain>("domains/{name}", parameters, null, method: Method.Delete);
+        return _connection.ExecuteRequest<Domain>("domains/{id}", parameters, null, method: Method.Delete);
     }
 
-    public Task<Domain> UpdateStatus(int domainId)
+    public Task<Domain> UpdateStatus(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("name",domainId.ToString())
+            new UrlSegmentParameter("id",id.ToString())
         };
         
-        return _connection.ExecuteRequest<Domain>("domains/{name}/check", parameters, null, method: Method.Post);
+        return _connection.ExecuteRequest<Domain>("domains/{id}/check", parameters, null, method: Method.Post);
     }
 
-    public Task<Domain> Restore(int domainId)
+    public Task<Domain> Restore(int id)
     {
         var parameters = new List<Parameter> {
-            new UrlSegmentParameter("name",domainId.ToString())
+            new UrlSegmentParameter("id",id.ToString())
         };
         
-        return _connection.ExecuteRequest<Domain>("domains/{name}/restore", parameters, null, method: Method.Post);
+        return _connection.ExecuteRequest<Domain>("domains/{id}/restore", parameters, null, method: Method.Post);
     }
 
     public Task<IReadOnlyList<Domain>> GetAllDeleted()
