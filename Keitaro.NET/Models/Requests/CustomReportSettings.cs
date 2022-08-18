@@ -14,7 +14,7 @@ public class CustomReportSettings
     public string[] Metrics { get; set; }
 
     [JsonProperty("filters")]
-    public Filter[] Filters { get; set; }
+    public ReportFilter[] Filters { get; set; }
 
     [JsonProperty("sort")]
     public Sort[] Sort { get; set; }

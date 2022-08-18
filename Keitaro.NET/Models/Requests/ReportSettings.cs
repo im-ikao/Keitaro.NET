@@ -17,13 +17,13 @@ public class ReportSettings
     public string[] Columns { get; set; }
 
     [JsonProperty("filters")]
-    public Filter[] Filters { get; set; }
+    public ReportFilter[] Filters { get; set; }
 
     [JsonProperty("sort")]
     public Sort[] Sort { get; set; }
 }
 
-public class Filter
+public class ReportFilter
 {
     [JsonProperty("name")]
     public string Name { get; set; }

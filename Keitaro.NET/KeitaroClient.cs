@@ -32,6 +32,7 @@ public class KeitaroClient : IKeitaroClient
         Groups = new GroupClient(_connection);
         Logs = new LogsClient(_connection);
         Reports = new ReportsClient(_connection);
+        Flows = new FlowsClient(_connection);
     }
 
     public IDomainsClient Domains { get; }
@@ -42,4 +43,5 @@ public class KeitaroClient : IKeitaroClient
     public IGroupClient Groups { get; }
     public ILogsClient Logs { get; }
     public IReportsClient Reports { get; }
+    public IFlowsClient Flows { get; }
 }
