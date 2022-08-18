@@ -13,7 +13,7 @@
 - [x] Reports
 - [ ] Offers
 - [ ] Stats Clean
-- [ ] Streams
+- [x] Streams
 - [ ] Users
 - [ ] Landing Pages
 
