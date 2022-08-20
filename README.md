@@ -26,7 +26,7 @@ var domains = await client.Domains.GetAll();
 - [x] Bots
 - [x] Logs
 - [x] Reports
-- [ ] Offers
+- [o] Offers (Partial implementation)
 - [ ] Stats Clean
 - [x] Streams
 - [ ] Users

@@ -54,7 +54,7 @@ public class Flow
     public Offer[] Offers { get; set; }
 }
 
-public class Offer
+public class OfferFlow
 {
     [JsonProperty("offer_id")]
     public long OfferId { get; set; }

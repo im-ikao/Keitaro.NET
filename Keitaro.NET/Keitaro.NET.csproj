@@ -4,6 +4,15 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Authors>imikao</Authors>
+        <PackageProjectUrl>https://github.com/im-ikao/Keitaro.NET</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/im-ikao/Keitaro.NET</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Description>Implementation of the Keitaro API (v1) for .NET</Description>
+        <PackageTags>Keitaro</PackageTags>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <SignAssembly>False</SignAssembly>
+        <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>
